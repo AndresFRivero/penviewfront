@@ -1,0 +1,9 @@
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
