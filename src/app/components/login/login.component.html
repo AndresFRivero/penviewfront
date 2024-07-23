@@ -1,0 +1,33 @@
+@if (isLoggued) {
+    <h2>Bienvenido {{ usuario }} {{ ageUser }}</h2>
+
+    <img src="https://github.com/AndresFRivero.png"
+        alt="photo">
+
+    <app-usuarios username = "{{ usuario }}" (shareAge)="getAge($event)"></app-usuarios>
+
+    <h2>Token JWT</h2>
+    <p>{{ this.login.token }}</p>
+
+    <button (click)="logout()">Logout</button>
+
+} @else {
+    <h2>Inicia sesion</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="loginJWT()">
+        <label>
+            Nombre usuario
+            <input type="text" formControlName="username"/>
+        </label>
+
+        <label>
+            Contraseña:
+            <input type="password" formControlName="password"/>
+        </label>
+        <button type="submit"> Iniciar sesion </button>
+    </form>
+
+    <h2>Datos de sesion</h2>
+    <p>Usuario: {{ loginForm.value.username }}</p>
+    <p>Password: {{ loginForm.value.password }}</p>
+}
